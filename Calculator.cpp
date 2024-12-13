@@ -5,12 +5,10 @@
 
 class Calculator {
 public:
-    // Переменные для хранения чисел и знака
     long double NUM1 = 0;
     long double NUM2 = 0;
     char SIGN = '\0';
 
-    // Чтение данных
     void ReadInput() {
         if (NUM1 == 0) {
             NUM1 = ReadNumber("Введите первое число (или 'exit' для выхода): ");
@@ -35,14 +33,12 @@ public:
     }
 
 private:
-    // Сброс значений
     void ResetInputs() {
         NUM1 = 0;
         NUM2 = 0;
         SIGN = '\0';
     }
 
-    // Ввод числа
     long double ReadNumber(const std::string& prompt) {
         while (true) {
             std::cout << prompt;
@@ -62,7 +58,6 @@ private:
         }
     }
 
-    // Ввод оператора
     char ReadOperator(const std::string& prompt) {
         while (true) {
             std::cout << prompt;
@@ -82,18 +77,15 @@ private:
         }
     }
 
-    // Проверка команды выхода
     bool IsExitCommand(const std::string& input) {
         return input == "exit" || input == "quit" || input == "q";
     }
 
-    // Очистка потока ввода
     void ClearInputStream() {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
 
-    // Выполнение арифметической операции
     long double PerformCalculation() {
         switch (SIGN) {
             case '+': return NUM1 + NUM2;
