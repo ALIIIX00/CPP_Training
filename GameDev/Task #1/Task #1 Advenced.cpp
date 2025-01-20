@@ -62,10 +62,7 @@ class Game{
 
 
     private:
-    std::vector<User> SortingUsers(std::vector<User> users){
-        
-        return users;
-    }
+
     int InputQuantity(){
         std::cout << "Введите количество пользователей которых хотите добавить: ";
         int quantity;
